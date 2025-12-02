@@ -25,14 +25,14 @@ export default function Home() {
               </div>
               <div className="flex flex-1 justify-end gap-8">
                 <div className="hidden md:flex items-center gap-9">
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#home">Home</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#gallery">Gallery</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#services">Services</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#press">Press</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#contact">Contact</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#home">Inicio</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#gallery">Galería</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#services">Servicios</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#press">Prensa</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#contact">Contacto</a>
                 </div>
                 <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" href="#contact">
-                  <span className="truncate">Get a Quote</span>
+                  <span className="truncate">Solicitar Presupuesto</span>
                 </a>
               </div>
             </header>
@@ -40,17 +40,17 @@ export default function Home() {
               <div className="@[480px]:p-4">
                 <div className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="A beautifully crafted wooden interior of a camper van with warm lighting." style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_FM5zA31yPl7AyGwFtaJSBD759GjmYHTxcKpBfSZHPi3rR9DyzAMyerpCtELNjnjhQRl_qoEEttu1P_jIZM44CTPCcfLp3d73ka8pClpz83wU8oNnNoKh6u3qzhBAofw82I2WWPcWxUFkSLRxvcnkCgOHcndLUMcF7MVlUSPLHhvKCLIy2qajRoG-IpB8qq8ljBg2jkudXuQVA1bGSTWgt8mjzmbpoDr2G7oxqV13PPnrKV78b_dtCLYIfvr4TSUna0G5ZylkQTw")'}}>
                   <div className="flex flex-col gap-2 text-left">
-                    <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Transform Your Travel. Handcrafted for the Open Road.</h1>
-                    <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">Expert Van Conversions, Custom Camper Furniture, and Precision Laser Engraving.</h2>
+                    <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Transforma Tu Viaje. Artesanía para la Carretera.</h1>
+                    <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">Conversiones de Furgonetas Expertas, Mobiliario Personalizado y Grabado Láser de Precisión.</h2>
                   </div>
                   <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] transition-colors hover:bg-primary/90" href="#gallery">
-                    <span className="truncate">View Our Work</span>
+                    <span className="truncate">Ver Nuestro Trabajo</span>
                   </a>
                 </div>
               </div>
             </div>
             <div id="gallery">
-              <h2 className="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10">Our Craftsmanship</h2>
+              <h2 className="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10">Nuestra Artesanía</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 p-4">
                 <a className="group relative block md:col-span-2 md:row-span-2 aspect-square md:aspect-auto overflow-hidden rounded-lg" href="#">
                   <div className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="A full view of a completed van conversion with a bed, kitchen, and seating area." style={{backgroundImage: 'linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVdUhUlhTSc17elgGKDe_kYnr0zh9z9JybhMNZs3l1TEXfN0VIXnRvNVjtT4pqpaQK8JbuJQWYjKxQRfO-_z-KjvGULCLvk1Gk0h17fP5uTB6WoV-dLlHs9j5nzYtSgIdj5glNvcf3LESQGd83zhHcl5007lofRil8GMLTHnpWEykwd4HWQ8lhBl0Oj3LKFBVOHzYtVy3bcBd7OH05AVNZuRXtRxoOAE-ZzFY_QAOm7roPGQqAiwmkQZJqXwF7ERABF3v3M6WIF34")'}}></div>
@@ -86,8 +86,8 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-10 px-4 py-10 @container" id="services">
               <div className="flex flex-col gap-4">
-                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Our Services</h1>
-                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">From complete transformations to the finest details, we bring your vision to life with quality materials and expert craftsmanship.</p>
+                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Nuestros Servicios</h1>
+                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">Desde transformaciones completas hasta los detalles más finos, damos vida a tu visión con materiales de calidad y artesanía experta.</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-0">
                 <div className="flex flex-1 gap-3 rounded-lg border border-white/10 bg-[#1c2127] p-4 flex-col">
@@ -95,8 +95,8 @@ export default function Home() {
                     <span className="material-symbols-outlined text-3xl">airport_shuttle</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-white text-base font-bold leading-tight">Van Conversions</h2>
-                    <p className="text-slate-400 text-sm font-normal leading-normal">Full-service van conversions tailored to your adventure needs, from insulation and electrical to plumbing and layout design.</p>
+                    <h2 className="text-white text-base font-bold leading-tight">Conversiones de Furgonetas</h2>
+                    <p className="text-slate-400 text-sm font-normal leading-normal">Conversiones completas de furgonetas adaptadas a tus necesidades de aventura, desde aislamiento y electricidad hasta fontanería y diseño de distribución.</p>
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-white/10 bg-[#1c2127] p-4 flex-col">
@@ -104,8 +104,8 @@ export default function Home() {
                     <span className="material-symbols-outlined text-3xl">chair</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-white text-base font-bold leading-tight">Custom Furniture</h2>
-                    <p className="text-slate-400 text-sm font-normal leading-normal">We design and build high-quality, space-efficient furniture that perfectly fits your camper&apos;s layout and your personal style.</p>
+                    <h2 className="text-white text-base font-bold leading-tight">Mobiliario Personalizado</h2>
+                    <p className="text-slate-400 text-sm font-normal leading-normal">Diseñamos y construimos mobiliario de alta calidad y eficiente en espacio que se adapta perfectamente a la distribución de tu caravana y tu estilo personal.</p>
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-white/10 bg-[#1c2127] p-4 flex-col">
@@ -113,16 +113,16 @@ export default function Home() {
                     <span className="material-symbols-outlined text-3xl">auto_awesome</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-white text-base font-bold leading-tight">Laser Engraving</h2>
-                    <p className="text-slate-400 text-sm font-normal leading-normal">Add a personal touch with custom laser engraving on wood surfaces, from decorative panels to personalized signage.</p>
+                    <h2 className="text-white text-base font-bold leading-tight">Grabado Láser</h2>
+                    <p className="text-slate-400 text-sm font-normal leading-normal">Añade un toque personal con grabado láser personalizado en superficies de madera, desde paneles decorativos hasta señalización personalizada.</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex flex-col gap-10 px-4 py-10 @container" id="video">
               <div className="flex flex-col gap-4 text-center items-center">
-                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">See Our Craft in Motion</h1>
-                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">Watch how we transform an empty van into a bespoke home on wheels, showcasing the craftsmanship and detail that goes into every SouthCoast Camper build.</p>
+                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Observa Nuestra Artesanía en Movimiento</h1>
+                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">Observa cómo transformamos una furgoneta vacía en un hogar a medida sobre ruedas, mostrando la artesanía y el detalle que ponemos en cada construcción de SouthCoast Camper.</p>
               </div>
               <a className="group relative block aspect-video w-full overflow-hidden rounded-lg" href="#">
                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="A still from the promotional video showing a craftsman working on a van's interior." style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVdUhUlhTSc17elgGKDe_kYnr0zh9z9JybhMNZs3l1TEXfN0VIXnRvNVjtT4pqpaQK8JbuJQWYjKxQRfO-_z-KjvGULCLvk1Gk0h17fP5uTB6WoV-dLlHs9j5nzYtSgIdj5glNvcf3LESQGd83zhHcl5007lofRil8GMLTHnpWEykwd4HWQ8lhBl0Oj3LKFBVOHzYtVy3bcBd7OH05AVNZuRXtRxoOAE-ZzFY_QAOm7roPGQqAiwmkQZJqXwF7ERABF3v3M6WIF34")'}}></div>
@@ -138,8 +138,8 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-10 px-4 py-10 @container" id="press">
               <div className="flex flex-col gap-4">
-                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">In the Press</h1>
-                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">We&apos;re proud to be featured in publications that share our passion for craftsmanship and the van life movement.</p>
+                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">En Prensa</h1>
+                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">Nos enorgullece aparecer en publicaciones que comparten nuestra pasión por la artesanía y el movimiento de la vida en furgoneta.</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <a className="group flex flex-col gap-3 overflow-hidden rounded-lg" href="#">
@@ -148,7 +148,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col p-1">
                     <h3 className="font-bold text-white group-hover:text-primary">La Voz del Sur</h3>
-                    <p className="text-sm text-slate-400">&ldquo;Redefining mobile living with stunning, handcrafted conversions.&rdquo;</p>
+                    <p className="text-sm text-slate-400">&ldquo;Redefiniendo la vida móvil con conversiones impresionantes y artesanales.&rdquo;</p>
                   </div>
                 </a>
                 <a className="group flex flex-col gap-3 overflow-hidden rounded-lg" href="#">
@@ -157,7 +157,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col p-1">
                     <h3 className="font-bold text-white group-hover:text-primary">Camper Weekly</h3>
-                    <p className="text-sm text-slate-400">&ldquo;An in-depth look at the meticulous laser engraving process.&rdquo;</p>
+                    <p className="text-sm text-slate-400">&ldquo;Una mirada en profundidad al meticuloso proceso de grabado láser.&rdquo;</p>
                   </div>
                 </a>
                 <a className="group flex flex-col gap-3 overflow-hidden rounded-lg" href="#">
@@ -166,7 +166,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col p-1">
                     <h3 className="font-bold text-white group-hover:text-primary">Road &amp; Timber</h3>
-                    <p className="text-sm text-slate-400">&ldquo;You don&apos;t have to sacrifice comfort for a life of adventure.&rdquo;</p>
+                    <p className="text-sm text-slate-400">&ldquo;No tienes que sacrificar la comodidad por una vida de aventura.&rdquo;</p>
                   </div>
                 </a>
                 <a className="group flex flex-col gap-3 overflow-hidden rounded-lg" href="#">
@@ -175,15 +175,15 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col p-1">
                     <h3 className="font-bold text-white group-hover:text-primary">Van Life Journal</h3>
-                    <p className="text-sm text-slate-400">&ldquo;Showcasing their commitment to quality and custom solutions.&rdquo;</p>
+                    <p className="text-sm text-slate-400">&ldquo;Mostrando su compromiso con la calidad y las soluciones personalizadas.&rdquo;</p>
                   </div>
                 </a>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-10 px-4 py-10 @container" id="contact">
               <div className="flex flex-col gap-4 lg:w-1/2">
-                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Get in Touch</h1>
-                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">Ready to start your project? Fill out the form or use the contact details below. We&apos;re excited to hear about your dream build.</p>
+                <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Contacta con Nosotros</h1>
+                <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">¿Preparado para comenzar tu proyecto? Rellena el formulario o utiliza los datos de contacto que aparecen abajo. Estamos emocionados de conocer el proyecto de tus sueños.</p>
                 <div className="flex flex-col gap-4 mt-4 text-white">
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary">location_on</span>
@@ -202,19 +202,19 @@ export default function Home() {
               <div className="flex flex-col gap-4 lg:w-1/2 bg-[#1c2127] p-6 rounded-lg border border-white/10">
                 <form action="#" className="flex flex-col gap-4" method="POST">
                   <div>
-                    <label className="text-sm font-medium text-white" htmlFor="name">Your Name</label>
+                    <label className="text-sm font-medium text-white" htmlFor="name">Tu Nombre</label>
                     <input className="mt-1 block w-full rounded-lg border-white/10 bg-[#101922] text-white p-2 focus:ring-primary focus:border-primary" id="name" name="name" type="text"/>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-white" htmlFor="email">Your Email</label>
+                    <label className="text-sm font-medium text-white" htmlFor="email">Tu Correo Electrónico</label>
                     <input className="mt-1 block w-full rounded-lg border-white/10 bg-[#101922] text-white p-2 focus:ring-primary focus:border-primary" id="email" name="email" type="email"/>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-white" htmlFor="message">Your Message</label>
+                    <label className="text-sm font-medium text-white" htmlFor="message">Tu Mensaje</label>
                     <textarea className="mt-1 block w-full rounded-lg border-white/10 bg-[#101922] text-white p-2 focus:ring-primary focus:border-primary" id="message" name="message" rows={4}></textarea>
                   </div>
                   <button className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" type="submit">
-                    <span className="truncate">Send Message</span>
+                    <span className="truncate">Enviar Mensaje</span>
                   </button>
                 </form>
               </div>
