@@ -1,47 +1,49 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+    <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
             <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 lg:px-10 py-3" id="home">
               <div className="flex items-center gap-4 text-white">
                 <div className="flex items-center gap-4">
-                  <div className="size-6 text-primary">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
-                      <path clipRule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fillRule="evenodd"></path>
-                    </svg>
+                  <div className="size-56 text-primary">
+                    <Image
+                      src="/images/logo/LOGO_INSTAGRAM.png"
+                      alt="SouthCoast Camper Logo"
+                      width={224}
+                      height={224}
+                      className="w-56 h-56 object-contain"
+                      priority
+                      quality={100}
+                      unoptimized={false}
+                    />
                   </div>
-                  <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em]">SouthCoast Camper</h2>
                 </div>
-                <a className="text-white hover:text-primary" href="#">
-                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.117 0-3.482.01-4.697.067-2.61.12-3.828 1.34-3.95 3.95-.057 1.214-.066 1.577-.066 4.697s.01 3.482.066 4.697c.12 2.61 1.34 3.828 3.95 3.95 1.214.057 1.577.066 4.697.066s3.482-.01 4.697-.066c2.61-.12 3.828-1.34 3.95-3.95.057-1.214.066-1.577.066-4.697s-.01-3.482-.066-4.697c-.12-2.61-1.34-3.828-3.95-3.95-1.214-.057-1.577-.066-4.697-.066zm0 2.999a4.882 4.882 0 100 9.764 4.882 4.882 0 000-9.764zm0 8.332a3.45 3.45 0 110-6.9 3.45 3.45 0 010 6.9zM16.949 6.864a1.2 1.2 0 10.001 2.4 1.2 1.2 0 000-2.4z"></path>
-                  </svg>
-                </a>
               </div>
               <div className="flex flex-1 justify-end gap-8">
                 <div className="hidden md:flex items-center gap-9">
-                  <a className="text-white text-sm font-medium leading-normal hover:text-primary" href="#home">Home</a>
-                  <a className="text-white text-sm font-medium leading-normal hover:text-primary" href="#gallery">Gallery</a>
-                  <a className="text-white text-sm font-medium leading-normal hover:text-primary" href="#services">Services</a>
-                  <a className="text-white text-sm font-medium leading-normal hover:text-primary" href="#press">Press</a>
-                  <a className="text-white text-sm font-medium leading-normal hover:text-primary" href="#contact">Contact</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#home">Home</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#gallery">Gallery</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#services">Services</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#press">Press</a>
+                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#contact">Contact</a>
                 </div>
-                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]" href="#contact">
+                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" href="#contact">
                   <span className="truncate">Get a Quote</span>
                 </a>
               </div>
             </header>
-            <div className="@container mt-5">
+            <div className="@container mt-5" id="intro">
               <div className="@[480px]:p-4">
                 <div className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="A beautifully crafted wooden interior of a camper van with warm lighting." style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_FM5zA31yPl7AyGwFtaJSBD759GjmYHTxcKpBfSZHPi3rR9DyzAMyerpCtELNjnjhQRl_qoEEttu1P_jIZM44CTPCcfLp3d73ka8pClpz83wU8oNnNoKh6u3qzhBAofw82I2WWPcWxUFkSLRxvcnkCgOHcndLUMcF7MVlUSPLHhvKCLIy2qajRoG-IpB8qq8ljBg2jkudXuQVA1bGSTWgt8mjzmbpoDr2G7oxqV13PPnrKV78b_dtCLYIfvr4TSUna0G5ZylkQTw")'}}>
                   <div className="flex flex-col gap-2 text-left">
                     <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Transform Your Travel. Handcrafted for the Open Road.</h1>
                     <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">Expert Van Conversions, Custom Camper Furniture, and Precision Laser Engraving.</h2>
                   </div>
-                  <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]" href="#gallery">
+                  <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] transition-colors hover:bg-primary/90" href="#gallery">
                     <span className="truncate">View Our Work</span>
                   </a>
                 </div>
@@ -185,15 +187,15 @@ export default function Home() {
                 <div className="flex flex-col gap-4 mt-4 text-white">
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary">location_on</span>
-                    <span>123 Craftsmans Way, Unit 4B, SouthCoast, USA</span>
+                    <span>C. de la Baila, 4, 11510 Puerto Real, Cádiz</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary">call</span>
-                    <span>(555) 123-4567</span>
+                    <span>(+34) 664 484 557</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-primary">email</span>
-                    <span>hello@southcoastcamper.com</span>
+                    <span>southcoastcamper@gmail.com</span>
                   </div>
                 </div>
               </div>
@@ -211,7 +213,7 @@ export default function Home() {
                     <label className="text-sm font-medium text-white" htmlFor="message">Your Message</label>
                     <textarea className="mt-1 block w-full rounded-lg border-white/10 bg-[#101922] text-white p-2 focus:ring-primary focus:border-primary" id="message" name="message" rows={4}></textarea>
                   </div>
-                  <button className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]" type="submit">
+                  <button className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" type="submit">
                     <span className="truncate">Send Message</span>
                   </button>
                 </form>

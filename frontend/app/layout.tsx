@@ -22,17 +22,30 @@ export default function RootLayout({
   return (
     <html className="dark" lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.googleapis.com" 
+        />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossOrigin="anonymous" 
+        />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" 
+          rel="stylesheet"
+        />
         <style dangerouslySetInnerHTML={{
           __html: `
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24;
-        }
-    `}} />
+            .material-symbols-outlined {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            }
+          `
+        }} />
       </head>
       <body
         className={`${spaceGrotesk.variable} font-display bg-background-light dark:bg-background-dark antialiased`}

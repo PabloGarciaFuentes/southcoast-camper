@@ -1,0 +1,7 @@
+<!-- Favicon links added explicitly in layout.tsx -->
+<!-- The favicon should now be using /images/logo/LOGO_INSTAGRAM.png -->
+<!-- If issues persist, you may need to:
+1. Clear browser cache (Ctrl+F5)
+2. Check browser developer tools > Application > Storage > Clear storage
+3. Create a proper .ico file from the PNG logo
+-->
