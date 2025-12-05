@@ -1,164 +1,22 @@
-'use client';
-import Image from 'next/image';
-import { useState } from 'react';
+import { getStrapiData } from '../lib/strapi';
+import MobileMenu from './components/MobileMenu';
+import DesktopMenu from './components/DesktopMenu';
+import Intro from './components/Intro';
 
-export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export default async function Home() {
+  const strapiData = await getStrapiData('/api/home-page');
+  const {intro_title, intro_description} = strapiData.data || {};
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
-            {/* Desktop Header */}
-            <header className="hidden md:flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 lg:px-10 py-3" id="home">
-              <div className="flex items-center gap-4 text-white">
-                <div className="flex items-center gap-4">
-                  <div className="size-40 text-primary">
-                    <Image
-                      src="/images/logo/LOGO_INSTAGRAM.png"
-                      alt="SouthCoast Camper Logo"
-                      width={160}
-                      height={160}
-                      className="w-40 h-40 object-contain"
-                      priority
-                      quality={100}
-                      unoptimized={false}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-1 justify-end gap-8">
-                <div className="flex items-center gap-9">
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#home">Inicio</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#gallery">Galería</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#services">Servicios</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#press">Prensa</a>
-                  <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#contact">Contacto</a>
-                </div>
-                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" href="#contact">
-                  <span className="truncate">Solicitar Presupuesto</span>
-                </a>
-              </div>
-            </header>
-
-            {/* Mobile Header */}
-            <header className="md:hidden border-b border-solid border-white/10 p-4">
-              <div className="flex items-center justify-between mb-4">
-                {/* Hamburger Menu */}
-                <button
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-white hover:text-primary transition-colors"
-                  aria-label="Abrir menú"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-                
-                {/* Logo Centered */}
-                <div className="flex items-center gap-2 text-white">
-                  <div className="size-32 text-primary">
-                    <Image
-                      src="/images/logo/LOGO_INSTAGRAM.png"
-                      alt="SouthCoast Camper Logo"
-                      width={128}
-                      height={128}
-                      className="w-32 h-32 object-contain"
-                      priority
-                      quality={100}
-                      unoptimized={false}
-                    />
-                  </div>
-                </div>
-
-                {/* Spacer for centering */}
-                <div className="w-6"></div>
-              </div>
-
-              {/* CTA Button */}
-              <div className="flex justify-center">
-                <a className="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" href="#contact">
-                  <span className="truncate">Solicitar Presupuesto</span>
-                </a>
-              </div>
-
-              {/* Mobile Menu Overlay */}
-              {isMobileMenuOpen && (
-                <>
-                  <div 
-                    className="fixed inset-0 bg-black/50 z-40"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  ></div>
-                  <div className="fixed top-0 left-0 h-full w-80 bg-[#101922] z-50 shadow-xl">
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-white text-lg font-bold">SouthCoast Camper</h3>
-                        <button
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="text-white hover:text-primary transition-colors"
-                          aria-label="Cerrar menú"
-                        >
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </button>
-                      </div>
-                      <nav className="flex flex-col gap-6">
-                        <a 
-                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
-                          href="#home"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Inicio
-                        </a>
-                        <a 
-                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
-                          href="#gallery"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Galería
-                        </a>
-                        <a 
-                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
-                          href="#services"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Servicios
-                        </a>
-                        <a 
-                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
-                          href="#press"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Prensa
-                        </a>
-                        <a 
-                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
-                          href="#contact"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Contacto
-                        </a>
-                      </nav>
-                    </div>
-                  </div>
-                </>
-              )}
-            </header>
-            <div className="@container mt-5" id="intro">
-              <div className="@[480px]:p-4">
-                <div className="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="A beautifully crafted wooden interior of a camper van with warm lighting." style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_FM5zA31yPl7AyGwFtaJSBD759GjmYHTxcKpBfSZHPi3rR9DyzAMyerpCtELNjnjhQRl_qoEEttu1P_jIZM44CTPCcfLp3d73ka8pClpz83wU8oNnNoKh6u3qzhBAofw82I2WWPcWxUFkSLRxvcnkCgOHcndLUMcF7MVlUSPLHhvKCLIy2qajRoG-IpB8qq8ljBg2jkudXuQVA1bGSTWgt8mjzmbpoDr2G7oxqV13PPnrKV78b_dtCLYIfvr4TSUna0G5ZylkQTw")'}}>
-                  <div className="flex flex-col gap-2 text-left">
-                    <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Transforma Tu Viaje. Artesanía para la Carretera.</h1>
-                    <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">Conversiones de Furgonetas Expertas, Mobiliario Personalizado y Grabado Láser de Precisión.</h2>
-                  </div>
-                  <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] transition-colors hover:bg-primary/90" href="#gallery">
-                    <span className="truncate">Ver Nuestro Trabajo</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            {/* Desktop Menu Component */}
+            <DesktopMenu />
+            {/* Mobile Menu Component */}
+            <MobileMenu />
+            <Intro intro_title={intro_title} intro_description={intro_description} />
             <div id="gallery">
               <h2 className="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10">Nuestra Artesanía</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 p-4">
