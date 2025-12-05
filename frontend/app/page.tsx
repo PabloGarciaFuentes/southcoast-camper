@@ -1,21 +1,26 @@
+'use client';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
-            <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 lg:px-10 py-3" id="home">
+            {/* Desktop Header */}
+            <header className="hidden md:flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 lg:px-10 py-3" id="home">
               <div className="flex items-center gap-4 text-white">
                 <div className="flex items-center gap-4">
-                  <div className="size-56 text-primary">
+                  <div className="size-40 text-primary">
                     <Image
                       src="/images/logo/LOGO_INSTAGRAM.png"
                       alt="SouthCoast Camper Logo"
-                      width={224}
-                      height={224}
-                      className="w-56 h-56 object-contain"
+                      width={160}
+                      height={160}
+                      className="w-40 h-40 object-contain"
                       priority
                       quality={100}
                       unoptimized={false}
@@ -24,7 +29,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-1 justify-end gap-8">
-                <div className="hidden md:flex items-center gap-9">
+                <div className="flex items-center gap-9">
                   <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#home">Inicio</a>
                   <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#gallery">Galería</a>
                   <a className="text-white text-base font-medium leading-normal hover:text-primary" href="#services">Servicios</a>
@@ -35,6 +40,111 @@ export default function Home() {
                   <span className="truncate">Solicitar Presupuesto</span>
                 </a>
               </div>
+            </header>
+
+            {/* Mobile Header */}
+            <header className="md:hidden border-b border-solid border-white/10 p-4">
+              <div className="flex items-center justify-between mb-4">
+                {/* Hamburger Menu */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-white hover:text-primary transition-colors"
+                  aria-label="Abrir menú"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+                
+                {/* Logo Centered */}
+                <div className="flex items-center gap-2 text-white">
+                  <div className="size-32 text-primary">
+                    <Image
+                      src="/images/logo/LOGO_INSTAGRAM.png"
+                      alt="SouthCoast Camper Logo"
+                      width={128}
+                      height={128}
+                      className="w-32 h-32 object-contain"
+                      priority
+                      quality={100}
+                      unoptimized={false}
+                    />
+                  </div>
+                </div>
+
+                {/* Spacer for centering */}
+                <div className="w-6"></div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="flex justify-center">
+                <a className="flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90" href="#contact">
+                  <span className="truncate">Solicitar Presupuesto</span>
+                </a>
+              </div>
+
+              {/* Mobile Menu Overlay */}
+              {isMobileMenuOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 bg-black/50 z-40"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  ></div>
+                  <div className="fixed top-0 left-0 h-full w-80 bg-[#101922] z-50 shadow-xl">
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-8">
+                        <h3 className="text-white text-lg font-bold">SouthCoast Camper</h3>
+                        <button
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="text-white hover:text-primary transition-colors"
+                          aria-label="Cerrar menú"
+                        >
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                      <nav className="flex flex-col gap-6">
+                        <a 
+                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
+                          href="#home"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Inicio
+                        </a>
+                        <a 
+                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
+                          href="#gallery"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Galería
+                        </a>
+                        <a 
+                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
+                          href="#services"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Servicios
+                        </a>
+                        <a 
+                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
+                          href="#press"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Prensa
+                        </a>
+                        <a 
+                          className="text-white text-lg font-medium leading-normal hover:text-primary transition-colors" 
+                          href="#contact"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Contacto
+                        </a>
+                      </nav>
+                    </div>
+                  </div>
+                </>
+              )}
             </header>
             <div className="@container mt-5" id="intro">
               <div className="@[480px]:p-4">
