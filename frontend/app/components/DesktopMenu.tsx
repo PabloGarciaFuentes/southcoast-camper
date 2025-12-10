@@ -1,7 +1,11 @@
 'use client';
 import Image from 'next/image';
 
-export default function DesktopMenu() {
+interface IntroProps {
+  logoUrl?: string;
+}
+
+export default function DesktopMenu({ logoUrl }: IntroProps) {
 
   return (
     <>
@@ -11,7 +15,7 @@ export default function DesktopMenu() {
             <div className="flex items-center gap-4">
             <div className="size-40 text-primary">
                 <Image
-                src="/images/logo/LOGO_INSTAGRAM.png"
+                src={logoUrl || ''}
                 alt="SouthCoast Camper Logo"
                 width={160}
                 height={160}

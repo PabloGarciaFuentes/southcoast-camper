@@ -1,25 +1,35 @@
-import { getStrapiData } from '../lib/strapi';
 import MobileMenu from './components/MobileMenu';
 import DesktopMenu from './components/DesktopMenu';
 import Intro from './components/Intro';
+import { getHomePage } from '@/services/home';
+import { getLogoMenu } from '@/services/logo';
 
 // Configuración de ISR - regenerar cada 60 segundos
 export const revalidate = 60;
 
 export default async function Home() {
-  const strapiData = await getStrapiData('/api/home-page');
-  const {intro_title, intro_description} = strapiData?.data || {};
+  const homePageData = await getHomePage();
+  const { intro_title, intro_description } = homePageData.data;
+  const logoMenuUrl = await getLogoMenu();
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
-            {/* Desktop Menu Component */}
-            <DesktopMenu />
-            {/* Mobile Menu Component */}
-            <MobileMenu />
+
+            {/* ********************* MENU ********************* */}
+            <DesktopMenu logoUrl={logoMenuUrl} />
+            <MobileMenu logoUrl={logoMenuUrl} />
+            {/* ********************* END MENU ********************* */}
+
+
+            {/* ********************* INTRO ********************* */}
             <Intro intro_title={intro_title} intro_description={intro_description} />
+            {/* ********************* END INTRO ********************* */}
+
+
+            {/* ********************* GALLERY ********************* */}
             <div id="gallery">
               <h2 className="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-10">Nuestra Artesanía</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 p-4">
@@ -55,6 +65,10 @@ export default async function Home() {
                 </a>
               </div>
             </div>
+            {/* ********************* END GALLERY ********************* */}
+
+
+            {/* ********************* SERVICES ********************* */}
             <div className="flex flex-col gap-10 px-4 py-10 @container" id="services">
               <div className="flex flex-col gap-4">
                 <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Nuestros Servicios</h1>
@@ -90,6 +104,10 @@ export default async function Home() {
                 </div>
               </div>
             </div>
+            {/* ********************* END SERVICES ********************* */}
+
+
+            {/* ********************* VIDEO ********************* */}
             <div className="flex flex-col gap-10 px-4 py-10 @container" id="video">
               <div className="flex flex-col gap-4 text-center items-center">
                 <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Observa Nuestra Artesanía en Movimiento</h1>
@@ -107,6 +125,10 @@ export default async function Home() {
                 </div>
               </a>
             </div>
+            {/* ********************* END VIDEO ********************* */}
+
+
+            {/* ********************* PRESS ********************* */}
             <div className="flex flex-col gap-10 px-4 py-10 @container" id="press">
               <div className="flex flex-col gap-4">
                 <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">En Prensa</h1>
@@ -151,6 +173,10 @@ export default async function Home() {
                 </a>
               </div>
             </div>
+            {/* ********************* END PRESS ********************* */}
+
+
+            {/* ********************* CONTACT ********************* */}
             <div className="flex flex-col lg:flex-row gap-10 px-4 py-10 @container" id="contact">
               <div className="flex flex-col gap-4 lg:w-1/2">
                 <h1 className="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">Contacta con Nosotros</h1>
@@ -190,9 +216,15 @@ export default async function Home() {
                 </form>
               </div>
             </div>
+            {/* ********************* END CONTACT ********************* */}
+
+
+            {/* ********************* FOOTER ********************* */}
             <footer className="mt-10 border-t border-solid border-white/10 px-4 sm:px-6 lg:px-10 py-6 text-center text-slate-400 text-sm">
               <p>© 2024 SouthCoast Camper. All rights reserved.</p>
             </footer>
+            {/* ********************* END FOOTER ********************* */}
+
           </div>
         </div>
       </div>

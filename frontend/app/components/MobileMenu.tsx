@@ -2,7 +2,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-export default function MobileMenu() {
+interface IntroProps {
+  logoUrl?: string;
+}
+
+export default function MobileMenu({ logoUrl }: IntroProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -25,7 +29,7 @@ export default function MobileMenu() {
           <div className="flex items-center gap-2 text-white">
             <div className="size-32 text-primary">
               <Image
-                src="/images/logo/LOGO_INSTAGRAM.png"
+                src={logoUrl || ''}
                 alt="SouthCoast Camper Logo"
                 width={128}
                 height={128}
