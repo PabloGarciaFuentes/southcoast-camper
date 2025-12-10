@@ -32,7 +32,7 @@ export default function MobileMenu() {
                 className="w-32 h-32 object-contain"
                 priority
                 quality={100}
-                unoptimized={false}
+                unoptimized={true}
               />
             </div>
           </div>
