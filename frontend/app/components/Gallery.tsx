@@ -73,10 +73,12 @@ export default function Gallery() {
               priority={item.priority}
               loading={item.priority ? 'eager' : 'lazy'}
               sizes={index === 0 
-                ? "(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 480px"
-                : "(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 240px"
+                ? "(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                : "(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 200px"
               }
-              quality={80}
+              quality={60}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
             
             {/* Gradient Overlay */}
