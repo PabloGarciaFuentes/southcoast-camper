@@ -18,7 +18,7 @@ export default function DesktopMenu() {
                 className="w-40 h-40 object-contain"
                 priority
                 quality={100}
-                unoptimized={false}
+                unoptimized={true}
                 />
             </div>
             </div>
