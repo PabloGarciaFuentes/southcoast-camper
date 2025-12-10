@@ -8,9 +8,27 @@ import { getLogoMenu } from '@/services/logo';
 export const revalidate = 60;
 
 export default async function Home() {
-  const homePageData = await getHomePage();
-  const { intro_title, intro_description } = homePageData.data;
-  const logoMenuUrl = await getLogoMenu();
+  // Inicializar variables con valores seguros
+  let homePageData: { intro_title?: string; intro_description?: string } = {};
+  let logoMenuUrl = '';
+
+  // Intentar obtener home page desde Strapi
+  try {
+    const data = await getHomePage();
+    // data?.data viene de Strapi según tu tipado en services/home.ts
+    homePageData = data?.data || {};
+  } catch (error) {
+    console.error('❌ Error fetching home page data:', error);
+  }
+
+  // Intentar obtener logo desde Strapi
+  try {
+    logoMenuUrl = await getLogoMenu();
+  } catch (error) {
+    console.error('❌ Error fetching logo data:', error);
+  }
+
+  const { intro_title, intro_description } = homePageData;
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
