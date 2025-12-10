@@ -3,9 +3,12 @@ import MobileMenu from './components/MobileMenu';
 import DesktopMenu from './components/DesktopMenu';
 import Intro from './components/Intro';
 
+// Configuración de ISR - regenerar cada 60 segundos
+export const revalidate = 60;
+
 export default async function Home() {
   const strapiData = await getStrapiData('/api/home-page');
-  const {intro_title, intro_description} = strapiData.data || {};
+  const {intro_title, intro_description} = strapiData?.data || {};
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
