@@ -10,8 +10,45 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SouthCoast Camper",
-  description: "SouthCoast Camper Website",
+  title: "SouthCoast Camper - Conversiones de Furgonetas Artesanales",
+  description: "Especialistas en transformación de furgonetas en autocaravanas personalizadas. Mobiliario artesanal, grabado láser y conversiones completas en Cádiz.",
+  keywords: "furgonetas camper, conversión furgonetas, autocaravanas, mobiliario artesanal, grabado láser, Cádiz, Puerto Real",
+  authors: [{ name: "SouthCoast Camper" }],
+  creator: "SouthCoast Camper",
+  openGraph: {
+    title: "SouthCoast Camper - Conversiones de Furgonetas Artesanales",
+    description: "Especialistas en transformación de furgonetas en autocaravanas personalizadas",
+    url: "https://southcoast-camper.netlify.app",
+    siteName: "SouthCoast Camper",
+    images: [{
+      url: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_FM5zA31yPl7AyGwFtaJSBD759GjmYHTxcKpBfSZHPi3rR9DyzAMyerpCtELNjnjhQRl_qoEEttu1P_jIZM44CTPCcfLp3d73ka8pClpz83wU8oNnNoKh6u3qzhBAofw82I2WWPcWxUFkSLRxvcnkCgOHcndLUMcF7MVlUSPLHhvKCLIy2qajRoG-IpB8qq8ljBg2jkudXuQVA1bGSTWgt8mjzmbpoDr2G7oxqV13PPnrKV78b_dtCLYIfvr4TSUna0G5ZylkQTw",
+      width: 1200,
+      height: 630,
+      alt: "Interior de furgoneta camper con muebles artesanales"
+    }],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SouthCoast Camper - Conversiones de Furgonetas",
+    description: "Especialistas en transformación de furgonetas en autocaravanas personalizadas",
+    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuA_FM5zA31yPl7AyGwFtaJSBD759GjmYHTxcKpBfSZHPi3rR9DyzAMyerpCtELNjnjhQRl_qoEEttu1P_jIZM44CTPCcfLp3d73ka8pClpz83wU8oNnNoKh6u3qzhBAofw82I2WWPcWxUFkSLRxvcnkCgOHcndLUMcF7MVlUSPLHhvKCLIy2qajRoG-IpB8qq8ljBg2jkudXuQVA1bGSTWgt8mjzmbpoDr2G7oxqV13PPnrKV78b_dtCLYIfvr4TSUna0G5ZylkQTw"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Añadir cuando tengas Google Search Console
+  }
 };
 
 export default function RootLayout({
