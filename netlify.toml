@@ -4,11 +4,6 @@
   publish = ".next"  # publica el build de Next.js
   functions = ".netlify/functions" # serverless functions generadas por el plugin
 
-
-[build.environment]
-  NODE_VERSION = "20"
-  NPM_VERSION = "10"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
