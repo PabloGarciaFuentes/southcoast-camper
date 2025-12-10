@@ -1,7 +1,9 @@
 [build]
-  base = "frontend"
-  publish = "out"
-  command = "npm run build"
+  base = "frontend"           # importante: build desde el subdirectorio frontend
+  command = "npm install && npm run build"
+  publish = "frontend/.next"  # publica el build de Next.js
+  functions = "frontend/.netlify/functions" # serverless functions generadas por el plugin
+
 
 [build.environment]
   NODE_VERSION = "20"
