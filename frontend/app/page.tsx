@@ -3,6 +3,7 @@ import DesktopMenu from './components/DesktopMenu';
 import Intro from './components/Intro';
 import Gallery from './components/Gallery';
 import Press from './components/Press';
+import { CamperIcon, ToolsIcon, LaserIcon, LocationIcon, PhoneIcon, EmailIcon } from './components/icons';
 import { getHomePage } from '@/services/home';
 import { getLogoMenu } from '@/services/logo';
 
@@ -62,8 +63,8 @@ export default async function Home() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-0">
                 <div className="flex flex-1 gap-3 rounded-lg border border-white/10 bg-[#1c2127] p-4 flex-col">
-                  <div className="text-primary" data-icon="Van" data-size="24px" data-weight="regular">
-                    <span className="material-symbols-outlined text-3xl">airport_shuttle</span>
+                  <div className="text-primary">
+                    <CamperIcon size={32} className="text-primary" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <h2 className="text-white text-base font-bold leading-tight">Conversiones de Furgonetas</h2>
@@ -71,8 +72,8 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-white/10 bg-[#1c2127] p-4 flex-col">
-                  <div className="text-primary" data-icon="Couch" data-size="24px" data-weight="regular">
-                    <span className="material-symbols-outlined text-3xl">chair</span>
+                  <div className="text-primary">
+                    <ToolsIcon size={32} className="text-primary" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <h2 className="text-white text-base font-bold leading-tight">Mobiliario Personalizado</h2>
@@ -80,8 +81,8 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-white/10 bg-[#1c2127] p-4 flex-col">
-                  <div className="text-primary" data-icon="Sparkle" data-size="24px" data-weight="regular">
-                    <span className="material-symbols-outlined text-3xl">auto_awesome</span>
+                  <div className="text-primary">
+                    <LaserIcon size={32} className="text-primary" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <h2 className="text-white text-base font-bold leading-tight">Grabado Láser</h2>
@@ -126,15 +127,15 @@ export default async function Home() {
                 <p className="text-slate-400 text-base font-normal leading-normal max-w-[720px]">¿Preparado para comenzar tu proyecto? Rellena el formulario o utiliza los datos de contacto que aparecen abajo. Estamos emocionados de conocer el proyecto de tus sueños.</p>
                 <div className="flex flex-col gap-4 mt-4 text-white">
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-primary">location_on</span>
+                    <LocationIcon className="text-primary" size={24} />
                     <span>C. de la Baila, 4, 11510 Puerto Real, Cádiz</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-primary">call</span>
+                    <PhoneIcon className="text-primary" size={24} />
                     <span>(+34) 664 484 557</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-primary">email</span>
+                    <EmailIcon className="text-primary" size={24} />
                     <span>southcoastcamper@gmail.com</span>
                   </div>
                 </div>

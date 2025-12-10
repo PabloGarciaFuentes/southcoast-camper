@@ -65,15 +65,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://lh3.googleusercontent.com" />
         <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
         
-        {/* Google Icons - Material Symbols */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" 
-          rel="stylesheet"
-        />
-        
         {/* Estilos para Google Icons */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+            
             .material-symbols-outlined {
               font-variation-settings:
               'FILL' 0,
@@ -81,6 +77,7 @@ export default function RootLayout({
               'GRAD' 0,
               'opsz' 24;
               user-select: none;
+              font-family: 'Material Symbols Outlined';
             }
           `
         }} />
