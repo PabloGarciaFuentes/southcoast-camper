@@ -16,6 +16,9 @@
     },
     "intro_description": {
       "type": "text"
+    },
+    "intro_button": {
+      "type": "string"
     }
   }
 }

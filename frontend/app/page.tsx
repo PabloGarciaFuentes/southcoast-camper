@@ -12,7 +12,11 @@ export const revalidate = 60;
 
 export default async function Home() {
   // Inicializar variables con valores seguros
-  let homePageData: { intro_title?: string; intro_description?: string } = {};
+  let homePageData: { 
+    intro_title?: string; 
+    intro_description?: string; 
+    intro_button?: string 
+  } = {};
   let logoMenuUrl = '';
 
   // Intentar obtener home page desde Strapi
@@ -31,7 +35,7 @@ export default async function Home() {
     console.error('❌ Error fetching logo data:', error);
   }
 
-  const { intro_title, intro_description } = homePageData;
+  const { intro_title, intro_description, intro_button } = homePageData;
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
@@ -46,7 +50,7 @@ export default async function Home() {
 
 
             {/* ********************* INTRO ********************* */}
-            <Intro intro_title={intro_title} intro_description={intro_description} />
+            <Intro intro_title={intro_title} intro_description={intro_description} intro_button={intro_button} />
             {/* ********************* END INTRO ********************* */}
 
 

@@ -4,9 +4,10 @@ import Image from 'next/image';
 interface IntroProps {
   intro_title?: string;
   intro_description?: string;
+  intro_button?: string;
 }
 
-export default function Intro({ intro_title, intro_description }: IntroProps) {
+export default function Intro({ intro_title, intro_description, intro_button }: IntroProps) {
 
   return (
     <>
@@ -34,7 +35,7 @@ export default function Intro({ intro_title, intro_description }: IntroProps) {
                     <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">{intro_description || "Conversiones de Furgonetas Expertas, Mobiliario Personalizado y Grabado Láser de Precisión."}</h2>
                 </div>
                 <a className="relative z-20 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] transition-colors hover:bg-primary/90" href="#gallery">
-                <span className="truncate">Ver Nuestro Trabajo</span>
+                <span className="truncate">{intro_button || "Ver Nuestro Trabajo"}</span>
                 </a>
             </div>
         </div>
