@@ -11,15 +11,19 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '*.strapiapp.com' },
       { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
       { protocol: 'https', hostname: 'res.cloudinary.com' },
-      { protocol: 'http', hostname: 'localhost', port: '1337' }
+      { protocol: 'http', hostname: 'localhost', port: '1337' },
+      { protocol: 'https', hostname: 'localhost', port: '1337' },
+      // Permitir localhost específicamente
+      { protocol: 'http', hostname: '127.0.0.1', port: '1337' },
+      { protocol: 'http', hostname: '::1', port: '1337' }
     ],
-    unoptimized: false,
+    unoptimized: process.env.NODE_ENV === 'development', // Desactivar optimización en desarrollo para localhost
     // Optimizaciones agresivas de performance
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     qualities: [60, 70, 75, 80, 85, 100],
-    minimumCacheTTL: 31536000, // 1 año
+    minimumCacheTTL: process.env.NODE_ENV === 'development' ? 0 : 31536000, // Sin cache en desarrollo
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },

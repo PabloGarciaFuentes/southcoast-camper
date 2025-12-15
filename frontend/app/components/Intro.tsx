@@ -1,13 +1,19 @@
 'use client';
 import Image from 'next/image';
+import { getStrapiImageUrl, StrapiImage } from '@/helpers/strapiImage';
 
 interface IntroProps {
   intro_title?: string;
   intro_description?: string;
   intro_button?: string;
+  intro_image?: StrapiImage;
 }
 
-export default function Intro({ intro_title, intro_description, intro_button }: IntroProps) {
+export default function Intro({ intro_title, intro_description, intro_button, intro_image }: IntroProps) {
+  // Usar imagen de Strapi si está disponible, sino usar imagen por defecto
+  const imageSrc = getStrapiImageUrl(intro_image, 'large');
+  
+  const imageAlt = intro_image?.name || "Interior de furgoneta camper con muebles de madera artesanales";
 
   return (
     <>
@@ -16,10 +22,10 @@ export default function Intro({ intro_title, intro_description, intro_button }: 
             <div className="relative flex min-h-[480px] flex-col gap-6 @[480px]:gap-8 rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10 overflow-hidden">
                 {/* Background Image Optimizada */}
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_FM5zA31yPl7AyGwFtaJSBD759GjmYHTxcKpBfSZHPi3rR9DyzAMyerpCtELNjnjhQRl_qoEEttu1P_jIZM44CTPCcfLp3d73ka8pClpz83wU8oNnNoKh6u3qzhBAofw82I2WWPcWxUFkSLRxvcnkCgOHcndLUMcF7MVlUSPLHhvKCLIy2qajRoG-IpB8qq8ljBg2jkudXuQVA1bGSTWgt8mjzmbpoDr2G7oxqV13PPnrKV78b_dtCLYIfvr4TSUna0G5ZylkQTw=w1200-h675-c"
-                  alt="Interior de furgoneta camper con muebles de madera artesanales"
+                  src={imageSrc}
+                  alt={imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                   loading="eager"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1200px, 1200px"

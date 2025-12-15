@@ -6,6 +6,8 @@ import Press from './components/Press';
 import { CamperIcon, ToolsIcon, LaserIcon, LocationIcon, PhoneIcon, EmailIcon } from './components/icons';
 import { getHomePage } from '@/services/home';
 import { getLogoMenu } from '@/services/logo';
+import { getGalleryData, transformGalleryData, GalleryItem } from '@/services/gallery';
+import { StrapiImage } from '@/helpers/strapiImage';
 
 // Configuración de ISR - regenerar cada 60 segundos
 export const revalidate = 60;
@@ -15,9 +17,11 @@ export default async function Home() {
   let homePageData: { 
     intro_title?: string; 
     intro_description?: string; 
-    intro_button?: string 
+    intro_button?: string;
+    intro_image?: StrapiImage;
   } = {};
   let logoMenuUrl = '';
+  let galleryItems: GalleryItem[] | undefined;
 
   // Intentar obtener home page desde Strapi
   try {
@@ -35,7 +39,18 @@ export default async function Home() {
     console.error('❌ Error fetching logo data:', error);
   }
 
-  const { intro_title, intro_description, intro_button } = homePageData;
+  // Intentar obtener gallery data desde Strapi
+  try {
+    const galleryData = await getGalleryData();
+    if (galleryData?.data) {
+      galleryItems = transformGalleryData(galleryData.data);
+    }
+  } catch (error) {
+    console.error('❌ Error fetching gallery data:', error);
+    // Los datos por defecto se usarán automáticamente en el componente
+  }
+
+  const { intro_title, intro_description, intro_button, intro_image } = homePageData;
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden scroll-smooth">
@@ -50,12 +65,17 @@ export default async function Home() {
 
 
             {/* ********************* INTRO ********************* */}
-            <Intro intro_title={intro_title} intro_description={intro_description} intro_button={intro_button} />
+            <Intro 
+              intro_title={intro_title} 
+              intro_description={intro_description} 
+              intro_button={intro_button}
+              intro_image={intro_image}
+            />
             {/* ********************* END INTRO ********************* */}
 
 
             {/* ********************* GALLERY ********************* */}
-            <Gallery />
+            <Gallery galleryItems={galleryItems} />
             {/* ********************* END GALLERY ********************* */}
 
 
